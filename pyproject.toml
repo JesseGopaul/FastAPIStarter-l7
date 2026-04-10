@@ -3,39 +3,22 @@ requires = ["setuptools>=64.0", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "project-starter"
-version = "0.0.1"
-description = "Starter repository for student's projects for info 2602"
-readme = "README.md"
-requires-python = ">=3.10"
-authors = [
-    { name = "Kwasi Edwards", email = "kwasiedwards@gmail.com" }
-]
+name = "fastapistarter-l7"
+version = "0.1.0"
+description = "FastAPI Lab 7 Deployment"
 dependencies = [
-    "asyncpg",
-    "fastapi[all]",
-    "httpx",
-    "itsdangerous",
+    "fastapi[standard]",
+    "sqlmodel",
     "jinja2",
     "pwdlib[argon2]",
-    "psycopg2-binary",
-    "pyjwt",
-    "python-jose",
-    "pytest-asyncio",
-    "pytest",
-    "ruff",
-    "sqlmodel",
-    "tabulate",
-    "typer",
-    "uvicorn[standard]",
+    "pydantic[email]",
+    "python-multipart",
+    "python-jose[cryptography]",
+    "psycopg2-binary"  # <-- ADDED FOR LAB 7
 ]
+
 [project.optional-dependencies]
 dev = [
-
+    "pytest",
+    "httpx"
 ]
-
-[tool.pytest.ini_options]
-asyncio_mode = "auto"
-
-[tool.setuptools]
-packages = ["app"]
